@@ -1,0 +1,32 @@
+server:
+  port: 8080
+  servlet:
+    encoding:
+      force-response: true
+      charset: UTF-8
+
+spring:
+  application:
+    name: crypto_inve_store
+  task:
+    scheduling:
+      pool:
+        size: 3
+  datasource:
+    driver-class-name: org.postgresql.Driver
+  liquibase:
+    default-schema: public
+    change-log: classpath:db/changelog-master.xml
+
+
+logging:
+  level:
+    org:
+      springframework:
+        web:
+          filter:
+            CommonsRequestLoggingFilter: DEBUG
+
+springdoc:
+  swagger-ui:
+    operations-sorter:
